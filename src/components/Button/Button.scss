@@ -24,4 +24,10 @@
       background: darken($color-warning, 5%);
     }
   }
+  &.blue {
+   background: $color-dark;
+   &:hover {
+     background: darken($color-dark, 5%);
+   }
+ }
 }
