@@ -7,40 +7,15 @@ import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 
-class List extends React.Component {
-  static propTypes = {
-    description: PropTypes.node,
-    columns: PropTypes.array,
-    title: PropTypes.string,
-    image: PropTypes.string,
-    addColumn: PropTypes.func,
-  }
-  static defaultProps = {
-    description: settings.defaultListDescription,
-  }
-  /*  addColumn(title) {
-    this.setState(state => (
-      {
-        columns: [
-          ...state.columns,
-          {
-            key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
-            title,
-            icon: 'list-alt',
-            cards: [],
-          },
-        ],
-      }
-    ));
-  } */
-  render() {
-    const { title, image, description, columns, addColumn } = this.props;
+
+    const List = ({ title, image, description, columns, addColumn }) => {
     return (
       <section className={styles.component}>
         <Hero titleText={title} imagePath={image} />
         <div className={styles.description}>
           {ReactHtmlParser(description)}
         </div>
+
         <div className={styles.columns}>
           {columns.map(columnData => (
             <Column key={columnData.id} {...columnData} />
@@ -51,7 +26,17 @@ class List extends React.Component {
         </div>
       </section>
     );
-  }
-}
+  };
+  List.propTypes = {
+ description: PropTypes.node,
+ columns: PropTypes.array,
+ title: PropTypes.string,
+ image: PropTypes.string,
+ addColumn: PropTypes.func,
+};
+
+List.defaultProps = {
+ description: settings.defaultListDescription,
+};
 
 export default List;

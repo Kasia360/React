@@ -7,23 +7,8 @@ import Icon from '../Icon/Icon';
 import { settings } from '../../data/dataStore';
 
 
-class Column extends React.Component {
-/*  state = {
-    cards: this.props.cards || [],
-  } */
-  static propTypes = {
-    title: PropTypes.node,
-    cards: PropTypes.array,
-    icon: PropTypes.string,
-    addCard: PropTypes.func,
-  }
-  static defaultProps = {
-    title: 'Title',
-    icon: settings.defaultColumnIcon,
-  }
 
-  render() {
-    const { title, icon, cards, addCard } = this.props;
+    const Column = ({ title, icon, cards, addCard }) => {
     return (
       <section className={styles.component}>
         <h3 className={styles.title}><span className={styles.icon}><Icon name={icon} /></span>{title}
@@ -34,7 +19,17 @@ class Column extends React.Component {
         <Creator text={settings.cardCreatorText} action={addCard} />
       </section>
     );
-  }
-}
+  };
+
+  Column.propTypes = {
+    title: PropTypes.node,
+    cards: PropTypes.array,
+    icon: PropTypes.string,
+    addCard: PropTypes.func,
+  };
+  Column.defaultProps = {
+    title: 'Title',
+    icon: settings.defaultColumnIcon,
+  };
 
 export default Column;
