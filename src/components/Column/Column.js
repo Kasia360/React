@@ -18,16 +18,16 @@ const Column = ({ title, icon, cards, addCard /*, id */ }) => {
       <Droppable droppableId={id}>
         {provided => (
           */}
-          <div className={styles.cards}>
-          {/*{...provided.droppableProps} ref={provided.innerRef  } */}
-            {cards.map(cardData => (
-              <Card key={cardData.id} {...cardData} />
-            ))}
-            {/*
+      <div className={styles.cards}>
+        {/*{...provided.droppableProps} ref={provided.innerRef  } */}
+        {cards.map(cardData => (
+          <Card key={cardData.id} {...cardData} />
+        ))}
+        {/*
             {provided.placeholder}
             */}
-          </div>
-        {/*
+      </div>
+      {/*
       </Droppable>
       */}
       <Creator text={settings.cardCreatorText} action={addCard} />

@@ -4,11 +4,11 @@ import { getChosenCardsForColumn } from '../../redux/cardsRedux';
 
 
 const mapStateToProps = (state, props) => {
-  const id = props.match.params.id;
+  const string = props.match.params.id;
 
   return {
-    cards: getChosenCardsForColumn(state, id),
+    cards: getChosenCardsForColumn(state, string),
   };
 };
 
-export default connect(mapStateToProps)(SearchResults); 
+export default connect(mapStateToProps)(SearchResults);
