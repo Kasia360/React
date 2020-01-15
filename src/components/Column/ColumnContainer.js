@@ -11,6 +11,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = (dispatch, props) => ({
   addCard: title => dispatch(createAction_addCard({
     columnId: props.id,
+    listId: props.listId,
     title,
   })),
 });

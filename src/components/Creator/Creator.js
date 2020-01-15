@@ -18,6 +18,12 @@ class Creator extends React.Component {
     visibleButtons: false,
   }
 
+constructor(props) {
+  super(props);
+  this.handleOK = this.handleOK.bind(this);
+  this.handleCancel = this.handleCancel.bind(this);
+}
+
   handleChange(event) {
     // console.log(event);
     this.setState({
@@ -50,7 +56,7 @@ class Creator extends React.Component {
           type='text'
           placeholder={this.props.text}
           value={this.state.value}
-          onChange={this.handleChange}
+          onChange={(event) => this.handleChange(event)}
         />
         <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
           <Button onClick={this.handleOK}>OK</Button>
