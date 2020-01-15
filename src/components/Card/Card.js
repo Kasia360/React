@@ -9,15 +9,15 @@ const Card = ({ title, id, index }) => {
     <Draggable draggableId={id} index={index}>
       {(provided) => (
         <article
-              className={styles.component}
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-              ref={provided.innerRef}
-            >
-              {title}
-            </article>
-          )}
-        </Draggable>
+          className={styles.component}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+        >
+          {title}
+        </article>
+      )}
+    </Draggable>
   );
 };
 

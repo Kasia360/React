@@ -14,10 +14,10 @@ const Column = ({ title, icon, cards, addCard, id }) => {
     <section className={styles.component}>
       <h3 className={styles.title}><span className={styles.icon}><Icon name={icon} /></span>{title}
       </h3>
-<Droppable droppableId={id}>
- {provided => (
-   <div className={styles.cards}  {...provided.droppableProps} ref={provided.innerRef}>
-   {cards.map(cardData => (
+      <Droppable droppableId={id}>
+        {provided => (
+          <div className={styles.cards}  {...provided.droppableProps} ref={provided.innerRef}>
+            {cards.map(cardData => (
               <Card key={cardData.id} {...cardData} />
             ))}
             {provided.placeholder}

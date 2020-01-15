@@ -44,9 +44,9 @@ class App extends React.Component {
         <h2 className={styles.subtitle}>{subtitle}</h2>
         <Search />
         <DragDropContext onDragEnd={moveCardHandler}>
-        {lists.map(listData => (
-          <List key={listData.id} {...listData} />
-        ))}
+          {lists.map(listData => (
+            <List key={listData.id} {...listData} />
+          ))}
         </DragDropContext>
       </main>
     );
